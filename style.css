@@ -1,44 +1,89 @@
-/* Style cho body - Đổi font chữ và kích cỡ chữ */
+/* ==========================================
+   1. CẤU HÌNH CHUNG & LAYOUT
+   ========================================== */
 body {
   font-family: Arial, sans-serif;
   font-size: 16px;
+  margin: 0;
+  padding: 0;
 }
 
-/* Style cho header - Đổi màu nền */
+/* Định dạng phần header chứa ảnh và chữ h1 */
 header {
   background-color: #f4f4f4;
+  padding: 15px;
+  /* Dòng này giúp cố định các thành phần float bên trong không bị tràn ra ngoài */
+  overflow: hidden;
 }
 
-/* Style cho nav - Đổi màu nền */
+/* ==========================================
+   2. SỬA LỖI HÌNH ẢNH (KÉO HÌNH CHO KHỚP CHỮ)
+   ========================================== */
+header img {
+  float: left; /* Đẩy ảnh chú chó sang bên trái */
+  margin-right: 20px; /* Tạo khoảng cách bên phải ảnh để chữ không dính vào */
+  margin-bottom: 10px; /* Tạo khoảng cách phía dưới */
+  border-radius: 4px; /* Bo góc nhẹ cho ảnh trông đẹp hơn */
+}
+
+/* Tiêu đề h1 tự động nhảy lên bên phải, khớp với ảnh */
+h1 {
+  text-align: left; /* Chuyển sang căn trái để đi liền mạch với ảnh */
+  font-family: "Georgia", serif;
+  color: #222222;
+  margin-top: 20px; /* Canh chỉnh cho chữ ngang tầm với ảnh */
+}
+
+/* ==========================================
+   3. SỬA LỖI MENU (ĐỘ TƯƠNG PHẢN CHỮ)
+   ========================================== */
 nav {
-  background-color: #333333;
+  background-color: #333333; /* Nền tối */
+  padding: 10px;
+  margin-bottom: 15px;
 }
 
-/* Style cho main - Đổi màu nền và kích cỡ chữ */
+li {
+  display: inline-block;
+  width: 150px; /* Tăng nhẹ độ rộng để menu không bị xuống hàng */
+}
+
+/* BẮT BUỘC: Đổi màu các liên kết (thẻ a) thành màu sáng để dễ đọc */
+nav a {
+  color: #ffffff !important; /* Chữ màu trắng sáng trên nền tối */
+  text-decoration: none; /* Bỏ gạch chân cho đẹp */
+  font-weight: bold;
+}
+
+/* Hiệu ứng đổi màu vàng khi rê chuột vào menu */
+nav a:hover {
+  color: #ffcc00 !important;
+}
+
+/* ==========================================
+   4. NỘI DUNG CHÍNH & FOOTER
+   ========================================== */
 main {
   background-color: #ffffff;
   font-size: 18px;
+  padding: 15px;
+  /* Đảm bảo nội dung chính không bị ảnh hưởng bởi thuộc tính float ở header */
+  clear: both;
 }
 
-/* Style cho footer - Đổi màu nền */
-footer {
-  background-color: #e2e2e2;
-}
-
-/* Style cho các li trong menu - Chuyển thành menu ngang và đặt độ rộng */
-li {
-  display: inline-block;
-  width: 120px;
-}
-
-/* Style cho tiêu đề h1 - Căn giữa, đổi font và màu chữ */
-h1 {
-  text-align: center;
-  font-family: "Georgia", serif;
-  color: #222222;
-}
-
-/* Style cho đoạn văn p - Tăng khoảng cách dòng cho dễ đọc */
 p {
   line-height: 1.6;
+}
+
+/* Style cho các hình ảnh nhỏ trong trang album (Neighborhood và Parks) */
+main img {
+  margin: 5px;
+  border: 1px solid #ccc;
+}
+
+footer {
+  background-color: #e2e2e2;
+  padding: 10px;
+  text-align: center;
+  clear: both;
 }
